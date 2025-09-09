@@ -1,0 +1,21 @@
+FROM ruby:3.2
+
+# Node.js & Yarn (Berry)
+RUN apt-get update -qq \
+    && apt-get install -y curl gnupg apt-transport-https lsb-release ca-certificates \
+    && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs \
+    && corepack enable   # Yarn Berry を有効化
+
+WORKDIR /app
+COPY ./src /app
+
+RUN bundle config --local set path 'vendor/bundle' \
+    && bundle install
+
+# 末尾に追加 server.pid を削除
+COPY entrypoint.sh /usr/bin/
+RUN chmod +x /usr/bin/entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
+
+CMD ["bundle", "exec", "rails", "s", "-b", "0.0.0.0"]

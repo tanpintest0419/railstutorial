@@ -1,0 +1,6 @@
+src/db/mysql_data
+log
+tmp
+.bundle
+vendor/bundle
+node_modules
