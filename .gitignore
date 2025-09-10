@@ -5,34 +5,34 @@
 # `$XDG_CONFIG_HOME/git/ignore` or `~/.config/git/ignore`
 
 # Ignore bundler config.
-src/.bundle
+src/*/.bundle
 
 # Ignore all environment files (except templates).
-src/.env*
-!src/.env*.erb
+src/*/.env*
+!src/*/.env*.erb
 
 # Ignore all logfiles and tempfiles.
-src/log/*
-src/tmp/*
-!src/log/.keep
-!src/tmp/.keep
+src/*/log/*
+src/*/tmp/*
+!src/*/log/.keep
+!src/*/tmp/.keep
 
 # Ignore pidfiles, but keep the directory.
-src/tmp/pids/*
-!src/tmp/pids/
-!src/tmp/pids/.keep
+src/*/tmp/pids/*
+!src/*/tmp/pids/
+!src/*/tmp/pids/.keep
 
 # Ignore storage (uploaded files in development and any SQLite databases).
-src/storage/*
-!src/storage/.keep
-src/tmp/storage/*
-!src/tmp/storage/
-!src/tmp/storage/.keep
+src/*/storage/*
+!src/*/storage/.keep
+src/*/tmp/storage/*
+!src/*/tmp/storage/
+!src/*/tmp/storage/.keep
 
-src/public/assets
+src/*/public/assets
 
 # Ignore master key for decrypting credentials and more.
-src/config/master.key
+src/*/config/master.key
 
 # DBデータ
 src/db/mysql_data
