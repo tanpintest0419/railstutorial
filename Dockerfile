@@ -8,7 +8,8 @@ RUN apt-get update -qq \
     && corepack enable   # Yarn Berry を有効化
 
 WORKDIR /app
-COPY ./src /app
+#COPY ./src /app
+COPY ./src/chapter2 /app
 
 RUN bundle config --local set path 'vendor/bundle' \
     && bundle install
