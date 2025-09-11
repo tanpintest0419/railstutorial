@@ -9,7 +9,7 @@ RUN apt-get update -qq \
 
 WORKDIR /app
 #COPY ./src /app
-COPY ./src/chapter2 /app
+COPY ./src/chapter3 /app
 
 RUN bundle config --local set path 'vendor/bundle' \
     && bundle install
