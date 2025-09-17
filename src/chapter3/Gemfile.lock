@@ -75,12 +75,17 @@ GEM
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.3)
+    autoprefixer-rails (10.4.21.0)
+      execjs (~> 2)
     base64 (0.3.0)
     benchmark (0.4.1)
     bigdecimal (3.2.3)
     bindex (0.8.1)
     bootsnap (1.18.6)
       msgpack (~> 1.2)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     brakeman (7.1.0)
       racc
     builder (3.3.0)
@@ -103,6 +108,8 @@ GEM
     drb (2.2.3)
     erb (5.0.2)
     erubi (1.13.1)
+    execjs (2.10.0)
+    ffi (1.17.2-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.7)
@@ -186,6 +193,10 @@ GEM
       activesupport (= 7.2.2.2)
       bundler (>= 1.15.0)
       railties (= 7.2.2.2)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.3.0)
       activesupport (>= 5.0.0)
       minitest
@@ -240,6 +251,14 @@ GEM
       rubocop-rails (>= 2.30)
     ruby-progressbar (1.13.0)
     rubyzip (3.1.0)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     securerandom (0.4.1)
     selenium-webdriver (4.35.0)
       base64 (~> 0.2)
@@ -259,6 +278,7 @@ GEM
       railties (>= 6.0.0)
     stringio (3.1.7)
     thor (1.4.0)
+    tilt (2.6.1)
     timeout (0.4.3)
     turbo-rails (2.0.16)
       actionpack (>= 7.1.0)
@@ -288,6 +308,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap-sass
   brakeman
   capybara
   debug
@@ -296,7 +317,9 @@ DEPENDENCIES
   mysql2 (~> 0.5)
   puma (>= 5.0)
   rails (~> 7.2.2, >= 7.2.2.2)
+  rails-controller-testing
   rubocop-rails-omakase
+  sassc-rails
   selenium-webdriver
   sprockets-rails
   stimulus-rails
