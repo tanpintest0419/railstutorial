@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show ]  # %i シンボルの配列を作るためのリテラル表記 editは削除
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:index, :edit, :update]
   before_action :correct_user,   only: [:edit, :update]
+
+  def index
+    # @users = User.all
+    @users = User.paginate(page: params[:page])
+  end
 
   def show
   end
