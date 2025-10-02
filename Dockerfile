@@ -11,6 +11,10 @@ WORKDIR /app
 #COPY ./src /app
 COPY ./src/chapter3 /app
 
+# Gemfile だけコピー（bundle install キャッシュ用）
+COPY ./src/chapter3/Gemfile /app/Gemfile
+COPY ./src/chapter3/Gemfile.lock /app/Gemfile.lock
+
 RUN bundle config --local set path 'vendor/bundle' \
     && bundle install
 
