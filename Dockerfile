@@ -5,7 +5,11 @@ RUN apt-get update -qq \
     && apt-get install -y curl gnupg apt-transport-https lsb-release ca-certificates \
     && curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
     && apt-get install -y nodejs \
-    && corepack enable   # Yarn Berry を有効化
+    && corepack enable \
+    && apt-get install -y imagemagick
+
+  # corepack enable :Yarn Berry を有効化
+  # apt-get install -y imagemagick : ないとMiniMagick::Error ("convert" not found) のようなエラーになります。
 
 WORKDIR /app
 #COPY ./src /app
