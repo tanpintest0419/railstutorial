@@ -10,7 +10,7 @@
     <% if current_user?(micropost.user) %>
       <%#= link_to "delete", micropost, method: :delete,
                                        data: { confirm: "You sure?" } %>
-      <a href="microposts/<%= micropost.id %>" data-turbo-method="delete" 
+      <a href="/microposts/<%= micropost.id %>" data-turbo-method="delete" 
         data-turbo-confirm="You sure?">delete</a>
     <% end %>
   </span>

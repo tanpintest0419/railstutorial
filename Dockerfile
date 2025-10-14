@@ -13,7 +13,7 @@ RUN apt-get update -qq \
 
 WORKDIR /app
 #COPY ./src /app
-COPY ./src/chapter3 /app
+#COPY ./src/chapter3 /app
 
 # Gemfile だけコピー（bundle install キャッシュ用）
 COPY ./src/chapter3/Gemfile /app/Gemfile
