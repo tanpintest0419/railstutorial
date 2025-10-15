@@ -38,6 +38,9 @@ class SiteLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", edit_user_path(@user)
     assert_select "a[href=?]", logout_path
     assert_select "a[href=?]", login_path, count: 0
+    # 追加: フォロー/フォロワーリンクの存在確認
+    assert_select 'a[href=?]', following_user_path(@user)
+    assert_select 'a[href=?]', followers_user_path(@user)
   end
 
   test "layout links when not logged in" do
