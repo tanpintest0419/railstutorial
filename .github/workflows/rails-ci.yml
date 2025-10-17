@@ -8,6 +8,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      DB_HOST: 127.0.0.1
+      MYSQL_ROOT_PASSWORD: password
+      RAILS_ENV: test
 
     services:
       # DBをMySQLにしたい場合はコメントアウト解除して設定できます
@@ -40,10 +44,8 @@ jobs:
         working-directory: ./src/chapter3
 
       - name: Prepare database
-        env:
-          DB_HOST: 127.0.0.1
         run: |
-          sleep 10
+          sleep 15   # DB起動待ち
           bin/rails db:setup
         working-directory: ./src/chapter3
 
