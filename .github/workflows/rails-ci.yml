@@ -40,6 +40,8 @@ jobs:
         working-directory: ./src/chapter3
 
       - name: Prepare database
+        env:
+          DB_HOST: 127.0.0.1
         run: |
           sleep 10
           bin/rails db:setup
