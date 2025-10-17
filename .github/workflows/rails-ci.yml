@@ -37,11 +37,15 @@ jobs:
         run: |
           gem install bundler
           bundle install --jobs 4 --retry 3
+        working-directory: ./src/chapter3
 
       - name: Prepare database
         run: |
+          sleep 10
           bin/rails db:setup
+        working-directory: ./src/chapter3
 
       - name: Run tests
         run: |
           bin/rails test
+        working-directory: ./src/chapter3
